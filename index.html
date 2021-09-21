@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Single Price Grid Component</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    :root{
+      --cyan: hsl(179, 62%, 43%);
+      --bright-yellow: hsl(71, 73%, 54%);
+      --light-gray: hsl(204, 43%, 93%);
+      --grayish-blue: hsl(218, 22%, 67%);
+    }
+
+    *{
+      box-sizing: border-box;
+    }
+
+    body{
+      margin: 0;
+      padding: 0;
+      font-family: 'Karla', sans-serif;
+      background-color: var(--light-gray);
+    }
+
+    main{
+      min-height: 100vh;
+      min-width: 320px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #container{
+      width: 83%;
+      max-width: 315px;
+      border-radius: 5px;
+      background-color: white;
+      overflow: hidden;
+      display: grid;
+      grid-template-areas: 
+      "desc"
+      "price"
+      "reason";
+      box-shadow: 0 10px 20px hsl(218, 22%, 67%, 0.5);
+    }
+
+    .card{
+      padding: 20px 25px;
+    }
+
+    .heading{
+      font-size: 1.125rem;
+      color: white;
+    }
+
+    /*Card Description*/
+
+    #card-description{
+      grid-area: desc;
+    }
+
+    #card-description .heading{
+      color: var(--cyan);
+    }
+
+    #guarantee{
+      color: var(--bright-yellow);
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin: 1.5em 0;
+    }
+
+    #desc{
+      color: var(--grayish-blue);
+      font-size: 0.85rem;
+      line-height: 1.8;
+    }
+
+    /*Card Price*/
+
+    #card-price{
+      grid-area: price;
+      background-color: var(--cyan);
+    }
+
+    #price-tag{
+      color: hsl(204, 43%, 93%, 0.8);
+      font-size: 0.84rem;
+      display: flex;
+      align-items: center;
+      margin: 0;
+      margin-top: 15px;
+    }
+
+    #price-tag span{
+      color: white;
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-right: 10px;
+    }
+
+    #full-access{
+      margin-top: 10px;
+      color: var(--light-gray);
+      font-size: 0.84rem;
+    }
+
+    #signUp{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      color: white;
+      font-size: 14px;
+      text-decoration: none;
+
+      width: 100%;
+      margin-top: 1.875rem;
+      border-radius: 5px;
+      background-color: var(--bright-yellow);
+      padding: 0.875rem 0;
+      box-shadow: 0 5px 10px hsl(0, 0%, 0%, 0.2);
+    }
+
+    /*Card Reason*/
+
+    #card-reason{
+      grid-area: reason;
+      background-color: #4ABEBD;
+    }
+
+    ul{
+      list-style-type: none;
+      padding: 0;
+      color:hsl(204, 43%, 93%, 0.8);
+      font-size: 0.84rem;
+    }
+
+    li{
+      margin: 5px 0;
+    }
+
+    @media screen and (min-width: 700px){
+      #container{
+        max-width: 650px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+        "desc desc"
+        "price reason";
+
+        border-radius: 10px;
+      }
+
+      .card{
+        padding: 40px;
+      }
+
+      #card-description .heading{
+        margin-top: 0;
+        font-size: 1.5rem;
+      }
+
+      #guarantee, #desc{
+        font-size: 1rem;
+        margin-bottom: 0;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <main>
+    <div id="container">
+      <div id="card-description" class="card">
+        <h1 class="heading">
+          Join our community
+        </h1>
+        <p id="guarantee">
+          30-day, hassle-free money back guarantee
+        </p>
+        <p id="desc">
+          Gain access to our full library of tutorials along with expert code reviews. 
+          Perfect for any developers who are serious about honing their skills.
+        </p>
+      </div>
+
+      <div id="card-price" class="card">
+        <div class="heading">
+          Monthly Subscription
+        </div>
+        <p id="price-tag">
+          <span>&dollar;29</span> per month
+        </p>
+        <div id="full-access">
+          Full access for less than &dollar;1 a day
+        </div>
+        <a href="#" id="signUp">Sign Up</a>
+      </div>
+      
+      <div id="card-reason" class="card">
+        <div class="heading">
+          Why Us
+        </div>
+        <ul>
+          <li>Tutorials by industry experts</li>
+          <li>Peer &amp; expert code review</li>
+          <li>Coding exercises</li>
+          <li>Access to our GitHub repos</li>
+          <li>Community forum</li>
+          <li>Flashcard decks</li>
+          <li>New videos every week</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+  
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Ignatius Jovanka</a>.
+    </p>
+  </footer>
+</body>
+</html>
